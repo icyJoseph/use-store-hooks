@@ -4,11 +4,14 @@ import { Container } from "reactstrap";
 
 import Header from "./components/Header";
 import Navigation from "./components/Navigation";
+import Code from "./components/Code";
 
 import Main from "./containers/Main";
 import GlobalStore from "./containers/GlobalStore";
 import Enhancers from "./containers/Enhancers";
 import Managed from "./containers/Managed";
+
+import { managedSrc } from "./code";
 
 import "./index.css";
 import "./bootstrap.min.css";
@@ -38,6 +41,7 @@ function App() {
           title="Managed"
           description="This counter uses a React Component, and controls its state using reducers."
         >
+          <Code code={managedSrc} />
           <Managed />
         </Header>
       </Container>
