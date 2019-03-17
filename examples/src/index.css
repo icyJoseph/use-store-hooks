@@ -1,47 +1,36 @@
-html {
-  height: 100%;
-}
-body {
-  height: 100%;
-  background: #282c34;
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.example-section {
+  margin: 1em 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
-.App {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-}
-
-.with-flex-wrap {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.hook {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0.5em;
-}
-
-.optimized-resize {
-  display: flex;
-  flex-direction: column;
+.example-container {
   padding: 1em;
+}
+
+.example-counter {
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  font-size: 2em;
+}
+
+.example-counter > div {
+  display: flex;
+  flex: 1;
+}
+
+.example-counter > div > button {
+  margin: 0.25em 0.5em;
+  min-width: 50px;
+  max-width: 50px;
+  text-align: center;
+}
+
+.external-links {
+  color: white;
+}
+
+.external-links > a {
+  margin: 1em 0.25em;
+  min-width: 100px;
+  max-width: 100px;
 }
