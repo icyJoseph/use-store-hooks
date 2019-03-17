@@ -1,7 +1,7 @@
 {
   "name": "use-global-store",
   "version": "1.0.0",
-  "description": "React reducer hooks with middleware",
+  "description": "React global store using hooks. Supports middleware",
   "author": {
     "name": "Joseph Chamochumbi",
     "email": "contact@icjoseph.com",
