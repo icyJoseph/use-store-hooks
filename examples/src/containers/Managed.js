@@ -14,22 +14,7 @@ export class Managed extends Component {
 
   render() {
     const { count } = this.state;
-    return (
-      <section className="example-section">
-        <h1 id="managed" className="display-4">
-          Managed
-        </h1>
-        <div>
-          <p className="lead">
-            This counter uses a React Component, and controls its state using
-            reducers.
-          </p>
-        </div>
-        <div className="example-container">
-          <Counter count={count} inc={this.increase} dec={this.decrease} />
-        </div>
-      </section>
-    );
+    return <Counter count={count} inc={this.increase} dec={this.decrease} />;
   }
 }
 
