@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Counter from "../components/Counter";
+import Counter from "./Counter";
 import reducer, { INC, DEC } from "../ducks/counter";
 
 export class Managed extends Component {
