@@ -1,6 +1,9 @@
 export const INC = "INC";
 export const DEC = "DEC";
 
+export const increase = () => ({ type: INC });
+export const decrease = () => ({ type: DEC });
+
 export function counter(count = 0, action) {
   switch (action.type) {
     case INC:
