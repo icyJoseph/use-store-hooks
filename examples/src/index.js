@@ -9,10 +9,10 @@ import Code from "./components/Code";
 import Main from "./containers/Main";
 import GlobalStore from "./containers/GlobalStore";
 import Enhancers from "./containers/Enhancers";
-import Managed from "./containers/Managed";
-import ManagedDevTools from "./containers/ManagedDevTools";
+import ReactComponent from "./containers/ReactComponent";
+import ReactComponentDevTools from "./containers/ReactComponentDevTools";
 
-import { managedSrc, managedDevToolsSrc } from "./code";
+import { reactComponentSrc, reactComponentDevToolsSrc } from "./code";
 
 import "./index.css";
 import "./bootstrap.min.css";
@@ -42,16 +42,16 @@ function App() {
           title="Managed"
           description="This counter uses a React Component, and controls its state using reducers."
         >
-          <Code code={managedSrc} />
-          <Managed />
+          <Code code={reactComponentSrc} />
+          <ReactComponent />
         </Header>
         <Header
           id="managedDevTools"
           title="Managed Dev Tools"
           description="This counter uses a React Component, and controls its state using reducers. And it is connected to Redux Dev Tools."
         >
-          <Code code={managedDevToolsSrc} />
-          <ManagedDevTools />
+          <Code code={reactComponentDevToolsSrc} />
+          <ReactComponentDevTools />
         </Header>
       </Container>
     </Fragment>

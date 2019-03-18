@@ -7,7 +7,7 @@ const useDevTools =
   typeof window !== "undefined" &&
   window.__REDUX_DEVTOOLS_EXTENSION__;
 
-export class ManagedDevTools extends Component {
+export class ReactComponentDevTools extends Component {
   state = {
     count: 0
   };
@@ -48,4 +48,4 @@ export class ManagedDevTools extends Component {
   }
 }
 
-export default ManagedDevTools;
+export default ReactComponentDevTools;

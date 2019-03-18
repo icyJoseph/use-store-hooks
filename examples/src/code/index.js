@@ -1,4 +1,4 @@
-export const managedSrc = `import React, { Component } from "react";
+export const reactComponentSrc = `import React, { Component } from "react";
 import Counter from "../components/Counter";
 import reducer, { INC, DEC } from "../ducks/counter";
 
@@ -21,7 +21,7 @@ export class Managed extends Component {
 export default Managed;
 `;
 
-export const managedDevToolsSrc = `import React, { Component } from "react";
+export const reactComponentDevToolsSrc = `import React, { Component } from "react";
 import Counter from "../components/Counter";
 import reducer, { INC, DEC } from "../ducks/counter";
 
