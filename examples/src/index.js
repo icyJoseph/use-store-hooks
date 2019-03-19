@@ -16,7 +16,8 @@ import { reactComponentSrc, reactComponentDevToolsSrc } from "./code";
 
 import "./index.css";
 import "./bootstrap.min.css";
-import { ReactHookDevTools } from "./containers/ReactHooksDevTools";
+import ReactHookDevTools from "./containers/ReactHooksDevTools";
+import ReactHookDevToolsEnhancer from "./containers/ReactHooksDevToolsEnhancer";
 
 function App() {
   return (
@@ -54,14 +55,21 @@ function App() {
           <Code code={reactComponentDevToolsSrc} />
           <ReactComponentDevTools />
         </Header>
+        <Header
+          id="hookDevTools"
+          title="useReducer + Dev Tools"
+          description="This useReducer hook uses Redux Dev Tools."
+        >
+          <ReactHookDevTools />
+        </Header>
+        <Header
+          id="hookEnhancerDevTools"
+          title="useReducer + Dev Tools"
+          description="This useReducer hook uses Redux Dev Tools through a helper function."
+        >
+          <ReactHookDevToolsEnhancer />
+        </Header>
       </Container>
-      <Header
-        id="hookDevTools"
-        title="Hooks with Redux Dev Tools"
-        description="This useReducer hook uses Redux Dev Tools"
-      >
-        <ReactHookDevTools />
-      </Header>
     </Fragment>
   );
 }
