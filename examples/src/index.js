@@ -2,6 +2,10 @@ import React, { Fragment } from "react";
 import ReactDOM from "react-dom";
 import { Container } from "reactstrap";
 
+import Provider from "../../src/Provider";
+import createStore from "../../src/createStore";
+import reducer from "../src/ducks/counter";
+
 import Header from "./components/Header";
 import Navigation from "./components/Navigation";
 import Code from "./components/Code";
@@ -14,14 +18,17 @@ import ReactComponentDevTools from "./containers/ReactComponentDevTools";
 
 import { reactComponentSrc, reactComponentDevToolsSrc } from "./code";
 
-import "./index.css";
-import "./bootstrap.min.css";
 import ReactHookDevTools from "./containers/ReactHooksDevTools";
 import ReactHookDevToolsEnhancer from "./containers/ReactHooksDevToolsEnhancer";
 
+import "./index.css";
+import "./bootstrap.min.css";
+
+const store = createStore(reducer);
+
 function App() {
   return (
-    <Fragment>
+    <Provider store={store}>
       <Navigation />
       <Main />
       <Container>
@@ -70,7 +77,7 @@ function App() {
           <ReactHookDevToolsEnhancer />
         </Header>
       </Container>
-    </Fragment>
+    </Provider>
   );
 }
 
