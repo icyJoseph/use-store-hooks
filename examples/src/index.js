@@ -23,15 +23,10 @@ import ReactHookDevToolsEnhancer from "./containers/ReactHooksDevToolsEnhancer";
 
 import "./index.css";
 import "./bootstrap.min.css";
+import { createLogger } from "redux-logger";
 
-const store = createStore(reducer, undefined, [
-  store => next => action => {
-    console.log(store.getState());
-    const ret = next(action);
-    console.log(store.getState());
-    return ret;
-  }
-]);
+const logger = createLogger();
+const store = createStore(reducer, undefined, [logger]);
 
 function App() {
   return (

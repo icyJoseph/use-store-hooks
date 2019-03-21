@@ -2,18 +2,28 @@ import React, { useEffect, useReducer, useState } from "react";
 import State from "./Context";
 import compose from "./compose";
 
-function useProvider(store) {
-  const { reducer, initialState, middlewares } = store;
-  const [state, preDispatch] = useReducer(reducer, initialState);
-  const [ready, setReady] = useState(false);
-
+function useEnhancer(reducer, initialState, middlewares) {
+  let [state, setState] = useState(initialState);
+  const dispatch = action => {
+    state = reducer(state, action);
+    setState(state);
+    return action;
+  };
+  let enhancedDispatch;
   const middlewareAPI = {
     getState: () => state,
-    dispatch: (...args) => dispatch(...args)
+    dispatch: (...args) => enhancedDispatch(...args)
   };
 
   const chain = middlewares.map(middleware => middleware(middlewareAPI));
-  const dispatch = compose(...chain)(preDispatch);
+  enhancedDispatch = compose(...chain)(dispatch);
+  return [state, enhancedDispatch];
+}
+
+function useProvider(store) {
+  const { reducer, initialState, middlewares } = store;
+  const [state, dispatch] = useEnhancer(reducer, initialState, middlewares);
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
     dispatch({ type: "@INIT" });
