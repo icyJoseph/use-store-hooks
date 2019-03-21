@@ -24,7 +24,14 @@ import ReactHookDevToolsEnhancer from "./containers/ReactHooksDevToolsEnhancer";
 import "./index.css";
 import "./bootstrap.min.css";
 
-const store = createStore(reducer);
+const store = createStore(reducer, undefined, [
+  store => next => action => {
+    console.log(store.getState());
+    const ret = next(action);
+    console.log(store.getState());
+    return ret;
+  }
+]);
 
 function App() {
   return (
