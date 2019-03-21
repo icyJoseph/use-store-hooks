@@ -12,7 +12,6 @@ import Code from "./components/Code";
 
 import Main from "./containers/Main";
 import GlobalStore from "./containers/GlobalStore";
-import Enhancers from "./containers/Enhancers";
 import ReactComponent from "./containers/ReactComponent";
 import ReactComponentDevTools from "./containers/ReactComponentDevTools";
 
@@ -40,13 +39,6 @@ function App() {
           description="These are connected to a global store."
         >
           <GlobalStore />
-        </Header>
-        <Header
-          id="enhancers"
-          title="Enhancers"
-          description="These have independent state. These are also connected to Redux dev Tools."
-        >
-          <Enhancers />
         </Header>
         <Header
           id="managed"

@@ -26,9 +26,6 @@ export function Navigation() {
             <NavLink href="#global">Global Store</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#enhancers">Enhancers</NavLink>
-          </NavItem>
-          <NavItem>
             <NavLink href="#managed">Managed</NavLink>
           </NavItem>
         </Nav>
