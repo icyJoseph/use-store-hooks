@@ -2,7 +2,7 @@ import React, { useEffect, useReducer, useState } from "react";
 import State from "./Context";
 import compose from "./compose";
 
-function useEnhancer({ reducer, initialState, middlewares }) {
+function useMiddleware({ reducer, initialState, middlewares }) {
   let [state, setState] = useState(initialState);
   let enhancedDispatch;
 
@@ -25,7 +25,7 @@ function useEnhancer({ reducer, initialState, middlewares }) {
 }
 
 function useStore({ ...store }) {
-  const [state, dispatch] = useEnhancer({ ...store });
+  const [state, dispatch] = useMiddleware({ ...store });
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
