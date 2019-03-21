@@ -8,6 +8,7 @@ export const withDevTools = (reducer, options) => {
   if (useDevTools()) {
     extension = window.__REDUX_DEVTOOLS_EXTENSION__.connect({ ...options });
   }
+  extension.send("@INIT", reducer(undefined, {}));
   return (state, action) => {
     const nextState = reducer(state, action);
     if (useDevTools()) {
