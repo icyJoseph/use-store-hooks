@@ -1,5 +1,12 @@
 import { INIT } from "./contants";
 
+/**
+ *
+ * @param {Function} reducer a function which takes state and action to return a next state
+ * @param {Object} options options to configure Redux Dev Tools
+ * @return {Function} an enhanced reducer, which will send actions and next states to Redux
+ * Dev Tools
+ */
 export const withDevTools = (reducer, options) => {
   const useDevTools = () =>
     process.env.NODE_ENV === "development" &&

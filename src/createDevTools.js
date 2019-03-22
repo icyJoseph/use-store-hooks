@@ -19,6 +19,15 @@ const defaults = {
   name: "Your App"
 };
 
+/**
+ *
+ * @param {Object} options optional configurations
+ * these are whether or not you wish to use the middleware, for example
+ * this flag could be true in development but false for production
+ * You can also specify a name to display in the Redux Dev Tools
+ *
+ * @return redux middleware
+ */
 export const createDevTools = (options = {}) => {
   const config = { ...defaults, ...options };
 
