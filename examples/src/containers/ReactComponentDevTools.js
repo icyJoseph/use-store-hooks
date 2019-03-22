@@ -21,7 +21,7 @@ export class ReactComponentDevTools extends Component {
       this.devTools = this.extension.connect({
         name: "Managed Dev Tools"
       });
-      this.devTools.send("@INIT", this.state);
+      this.devTools.send("@INIT", this.state.count);
     }
   }
 
