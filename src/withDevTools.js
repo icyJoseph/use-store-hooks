@@ -1,3 +1,5 @@
+import { INIT } from "./contants";
+
 export const withDevTools = (reducer, options) => {
   const useDevTools = () =>
     process.env.NODE_ENV === "development" &&
@@ -8,7 +10,7 @@ export const withDevTools = (reducer, options) => {
   if (useDevTools()) {
     extension = window.__REDUX_DEVTOOLS_EXTENSION__.connect({ ...options });
   }
-  extension.send("@INIT", reducer(undefined, {}));
+  extension.send(INIT, reducer(undefined, {}));
   return (state, action) => {
     const nextState = reducer(state, action);
     if (useDevTools()) {

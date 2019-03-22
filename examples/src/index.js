@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { Container } from "reactstrap";
 
 import Provider from "../../src/Provider";
-import createStore from "../../src/createStore";
+import invokeStore from "../../src/invokeStore";
 import reducer from "../src/ducks/counter";
 
 import Header from "./components/Header";
@@ -42,7 +42,7 @@ const withDevTools = () => {
 };
 const logger = createLogger();
 const devTools = createDevTools();
-const store = createStore(reducer, undefined, [
+const store = invokeStore(reducer, undefined, [
   logger,
   withDevTools(),
   devTools

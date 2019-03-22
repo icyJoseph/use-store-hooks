@@ -1,17 +1,21 @@
-import createStore from "./createStore";
-import connect from "./connect";
-import Provider from "./Provider";
-import State from "./Context";
-import combineReducers from "./combineReducers";
-import withDevTools from "./withDevTools";
 import createDevTools from "./createDevTools";
+import combineReducers from "./combineReducers";
+import connect from "./connect";
+import invokeStore from "./invokeStore";
+import Provider from "./Provider";
+import State from "./State";
+import useMiddleware from "./useMiddleware";
+import useProvider from "./useProvider";
+import withDevTools from "./withDevTools";
 
 export {
-  Provider,
+  createDevTools,
   combineReducers,
   connect,
-  createStore,
+  invokeStore,
+  Provider,
   State,
-  withDevTools,
-  createDevTools
+  useMiddleware,
+  useProvider,
+  withDevTools
 };

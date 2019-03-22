@@ -1,15 +1,16 @@
 import React, { useContext } from "react";
-import State from "./Context";
+import State from "./State";
 
 const connect = (mapState = () => {}, mapDispatch = () => {}) => {
   return ConnectedComponent => {
-    return () => {
+    return ({ ...props }) => {
       const { state, dispatch } = useContext(State);
 
       return (
         <ConnectedComponent
-          {...mapState(state)}
-          {...mapDispatch(dispatch)}
+          {...props}
+          {...mapState(state, props)}
+          {...mapDispatch(dispatch, props)}
           dispatch={dispatch}
         />
       );
