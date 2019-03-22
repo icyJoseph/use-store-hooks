@@ -4,6 +4,8 @@ Implementation of React Hooks which allows you to use reducers and middleware.
 
 > Coming soon to NPM!
 
+Demo available [here](https://rare-channel.surge.sh/).
+
 ## Motivation
 
 Redux is a very powerful concept. This document aims to share how one could still use the concept without having to ever install `redux` and `react-redux`.
