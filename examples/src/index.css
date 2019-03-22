@@ -50,3 +50,10 @@
   flex: 1;
   justify-content: center;
 }
+
+.display-3 {
+  font-size: 4em !important;
+}
+.display-4 {
+  font-size: 3em !important;
+}
