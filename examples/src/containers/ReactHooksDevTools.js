@@ -13,8 +13,8 @@ const withDevTools = reducer => {
     extension = window.__REDUX_DEVTOOLS_EXTENSION__.connect({
       name: "React Hook"
     });
+    extension.send("@INIT", reducer(undefined, {}));
   }
-  extension.send("@INIT", reducer(undefined, {}));
   return (state, action) => {
     const nextState = reducer(state, action);
     if (useDevTools) {
