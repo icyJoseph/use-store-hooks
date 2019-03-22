@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import Squared from "./Squared";
 import Counter from "../components/Counter";
-import GlobalStore from "../../../src/Context";
+import { State } from "../../../src";
 import { INC, DEC } from "../ducks/counter";
 
 export function WithoutConnect() {
-  const { state: count, dispatch } = useContext(GlobalStore);
+  const { state: count, dispatch } = useContext(State);
   return (
     <div className="multi-demo">
       <Squared />

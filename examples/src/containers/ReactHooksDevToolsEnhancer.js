@@ -1,7 +1,7 @@
 import React, { useReducer } from "react";
 import Counter from "../components/Counter";
 import reducer, { INC, DEC } from "../ducks/counter";
-import { withDevTools } from "../../../src/enhancers";
+import { withDevTools } from "../../../src/";
 
 const enhanced = withDevTools(reducer, { name: "Enhanced" });
 

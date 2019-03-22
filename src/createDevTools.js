@@ -34,3 +34,5 @@ export const createDevTools = (options = {}) => {
     return ret;
   };
 };
+
+export default createDevTools;

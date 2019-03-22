@@ -17,3 +17,5 @@ export const withDevTools = (reducer, options) => {
     return nextState;
   };
 };
+
+export default withDevTools;

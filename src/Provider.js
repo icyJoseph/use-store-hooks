@@ -24,7 +24,7 @@ function useMiddleware({ reducer, initialState, middlewares }) {
   return [state, enhancedDispatch];
 }
 
-function useStore({ ...store }) {
+function useProvider({ ...store }) {
   const [state, dispatch] = useMiddleware({ ...store });
   const [ready, setReady] = useState(false);
 
@@ -42,7 +42,7 @@ function useStore({ ...store }) {
  * @return {Node} a React Context Wrapper By Provider with dispatch and state
  */
 export function Provider({ store, children }) {
-  const [state, dispatch, ready] = useStore(store);
+  const [state, dispatch, ready] = useProvider(store);
   return (
     <State.Provider value={{ dispatch, state }}>
       {ready ? children : null}

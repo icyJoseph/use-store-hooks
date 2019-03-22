@@ -25,7 +25,7 @@ import "./index.css";
 import "./bootstrap.min.css";
 
 import { createLogger } from "redux-logger";
-import { createDevTools } from "../../src/middleware";
+import { createDevTools } from "../../src";
 
 const withDevTools = () => {
   const extension = window.__REDUX_DEVTOOLS_EXTENSION__;

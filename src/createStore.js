@@ -1,4 +1,4 @@
-export function createStore(reducer, storeInit, middlewares = []) {
+export function invokeStore(reducer, storeInit, middlewares = []) {
   // if the initial state is given, take it,
   // otherwise do a dry run
   const initialState = storeInit || reducer(undefined, {});
@@ -6,4 +6,4 @@ export function createStore(reducer, storeInit, middlewares = []) {
   return { reducer, initialState, middlewares };
 }
 
-export default createStore;
+export default invokeStore;
