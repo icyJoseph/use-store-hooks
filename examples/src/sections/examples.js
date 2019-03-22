@@ -6,13 +6,21 @@ import WithoutConnect from "../containers/WithoutConnect";
 import ReactHookDevTools from "../containers/ReactHooksDevTools";
 import ReactHookDevToolsEnhancer from "../containers/ReactHooksDevToolsEnhancer";
 
-import { reactComponentSrc, reactComponentDevToolsSrc } from "../code";
+import {
+  globalStoreSrc,
+  withoutConnectSrc,
+  reactComponentSrc,
+  reactComponentDevToolsSrc,
+  withDevToolsManually,
+  withDevToolsEnhancerSrc
+} from "../code";
 
 export const examples = [
   {
     id: "global",
     title: "Global Store",
     description: "These are connected to a global store.",
+    code: globalStoreSrc,
     Component: GlobalStore
   },
   {
@@ -20,6 +28,7 @@ export const examples = [
     title: "Without Connect",
     description:
       "These are connected to a global store, without a connect helper.",
+    code: withoutConnectSrc,
     Component: WithoutConnect
   },
   {
@@ -42,6 +51,7 @@ export const examples = [
     id: "hookDevTools",
     title: "useReducer + Dev Tools",
     description: "This useReducer hook uses Redux Dev Tools.",
+    code: withDevToolsManually,
     Component: ReactHookDevTools
   },
   {
@@ -49,6 +59,7 @@ export const examples = [
     title: "useReducer + Dev Tools",
     description:
       "This useReducer hook uses Redux Dev Tools through a helper function.",
+    code: withDevToolsEnhancerSrc,
     Component: ReactHookDevToolsEnhancer
   }
 ];
