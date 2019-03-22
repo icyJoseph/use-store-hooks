@@ -22,10 +22,30 @@ import ReactHookDevToolsEnhancer from "./containers/ReactHooksDevToolsEnhancer";
 
 import "./index.css";
 import "./bootstrap.min.css";
-import { createLogger } from "redux-logger";
 
+import { createLogger } from "redux-logger";
+import { createDevTools } from "../../src/middleware";
+
+const withDevTools = () => {
+  const extension = window.__REDUX_DEVTOOLS_EXTENSION__;
+  const devTools = extension
+    ? extension.connect({
+        name: "Root"
+      })
+    : { send: () => {} };
+  return store => next => action => {
+    const ret = next(action);
+    devTools.send(action.type, store.getState());
+    return ret;
+  };
+};
 const logger = createLogger();
-const store = createStore(reducer, undefined, [logger]);
+const devTools = createDevTools();
+const store = createStore(reducer, undefined, [
+  logger,
+  withDevTools(),
+  devTools
+]);
 
 function App() {
   return (
