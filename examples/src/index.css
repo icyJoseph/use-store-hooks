@@ -2,8 +2,22 @@
   margin: 1em 0;
 }
 
+@media (min-width: 700px) {
+  .example-container {
+    display: flex;
+    width: 90%;
+    padding: 1em;
+    justify-content: center;
+  }
+}
+
 .example-container {
   padding: 1em;
+}
+
+.code-container {
+  width: 90%;
+  margin: 0 auto;
 }
 
 .example-counter {
@@ -15,7 +29,6 @@
 
 .example-counter > div {
   display: flex;
-  flex: 1;
 }
 
 .example-counter > div > button {
@@ -44,6 +57,7 @@
 
 .multi-demo {
   display: flex;
+  flex-direction: column;
 }
 
 .multi-demo > div {

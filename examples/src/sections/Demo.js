@@ -8,7 +8,7 @@ import examples from "./examples";
 
 function Demo() {
   return (
-    <Container>
+    <Container fluid>
       {examples.map(({ id, Component, code = "", ...rest }) => (
         <Header key={id} {...rest}>
           <Code code={code} />

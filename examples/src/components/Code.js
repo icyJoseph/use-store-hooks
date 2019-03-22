@@ -8,9 +8,11 @@ export function Code({ code, language }) {
   }, []);
 
   return (
-    <pre>
-      <code className="language-javascript">{code}</code>
-    </pre>
+    <div className="code-container">
+      <pre>
+        <code className="language-javascript">{code}</code>
+      </pre>
+    </div>
   );
 }
 

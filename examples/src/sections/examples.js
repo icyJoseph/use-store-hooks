@@ -32,6 +32,21 @@ export const examples = [
     Component: WithoutConnect
   },
   {
+    id: "hookEnhancerDevTools",
+    title: "useReducer + Dev Tools",
+    description:
+      "This useReducer hook uses Redux Dev Tools through a helper function.",
+    code: withDevToolsEnhancerSrc,
+    Component: ReactHookDevToolsEnhancer
+  },
+  {
+    id: "hookDevTools",
+    title: "useReducer + Dev Tools",
+    description: "This useReducer hook uses Redux Dev Tools.",
+    code: withDevToolsManually,
+    Component: ReactHookDevTools
+  },
+  {
     id: "managed",
     title: "Managed",
     description:
@@ -46,21 +61,6 @@ export const examples = [
       "This counter uses a React Component, and controls its state using reducers. And it is connected to Redux Dev Tools.",
     code: reactComponentDevToolsSrc,
     Component: ReactComponentDevTools
-  },
-  {
-    id: "hookDevTools",
-    title: "useReducer + Dev Tools",
-    description: "This useReducer hook uses Redux Dev Tools.",
-    code: withDevToolsManually,
-    Component: ReactHookDevTools
-  },
-  {
-    id: "hookEnhancerDevTools",
-    title: "useReducer + Dev Tools",
-    description:
-      "This useReducer hook uses Redux Dev Tools through a helper function.",
-    code: withDevToolsEnhancerSrc,
-    Component: ReactHookDevToolsEnhancer
   }
 ];
 
