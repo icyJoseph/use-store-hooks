@@ -14,6 +14,7 @@ import Main from "./containers/Main";
 import GlobalStore from "./containers/GlobalStore";
 import ReactComponent from "./containers/ReactComponent";
 import ReactComponentDevTools from "./containers/ReactComponentDevTools";
+import WithoutConnect from "./containers/WithoutConnect";
 
 import { reactComponentSrc, reactComponentDevToolsSrc } from "./code";
 
@@ -59,6 +60,13 @@ function App() {
           description="These are connected to a global store."
         >
           <GlobalStore />
+        </Header>
+        <Header
+          id="withoutconnect"
+          title="Without Connect"
+          description="These are connected to a global store, without a connect helper."
+        >
+          <WithoutConnect />
         </Header>
         <Header
           id="managed"
