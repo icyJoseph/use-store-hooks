@@ -9,7 +9,7 @@ import compose from "./compose";
  * @return {Array} A react Hook which you can consume in other React Function Components
  * the hooks is structured as [state, dispatch]
  */
-function useMiddleware({ reducer, initialState, middlewares }) {
+function useMiddleware({ reducer, initialState, middlewares = [] }) {
   let [state, setState] = useState(initialState);
   let enhancedDispatch;
 
