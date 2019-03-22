@@ -10,7 +10,7 @@ function Demo() {
   return (
     <Container>
       {examples.map(({ id, Component, code = "", ...rest }) => (
-        <Header key={id} id={id} {...rest}>
+        <Header key={id} {...rest}>
           <Code code={code} />
           <Component />
         </Header>
