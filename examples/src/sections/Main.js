@@ -12,7 +12,13 @@ export function Main() {
           you can use Redux Dev Tools with hooks!
         </p>
         <div className="external-links">
-          <Button color="primary" tag="a">
+          <Button
+            color="primary"
+            tag="a"
+            href="https://github.com/icyJoseph/useGlobalStore"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             GitHub
           </Button>
           <Button color="info" tag="a">
