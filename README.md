@@ -1,6 +1,6 @@
 # useGlobalStore
 
-Implementation of React Hooks which allows you to use reducers and middleware.
+Implementation of React Hooks which allows you to use apply middleware to reducers.
 
 > Coming soon to NPM!
 
@@ -10,7 +10,7 @@ Demo available [here](https://rare-channel.surge.sh/).
 
 Redux is a very powerful concept. This document aims to share how one could still use the concept without having to ever install `redux` and `react-redux`.
 
-This package provides a bunch of methods to setup a redux-like global store, which connects to Redux Dev Tools and also consumes middleware!
+In addition, this package provides a bunch of methods to setup a redux-like global store, which connects to Redux Dev Tools and also consumes middleware!
 
 ## How to use?
 
@@ -20,7 +20,9 @@ This package provides a bunch of methods to setup a redux-like global store, whi
 const store = invokeStore(reducer);
 ```
 
-This is very similar to `createStore` exposed by Redux. `invokeStore` can optionally take an `initialState` and `middlewares`.
+Unlike createStore, this method simply does a dry run of your reducer to get the initial state. Optionally, `invokeStore` can take an `initialState` as second parameters.
+
+If you wish to apply middleware, `invokeStore` takes them as third argument. Middleware must be an array of redux valid middlewares.
 
 > Enhancers are not supported!
 
