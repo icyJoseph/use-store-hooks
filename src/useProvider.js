@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import useMiddleware from "./useMiddleware";
-import { INIT } from "./contants";
+import { INIT, PROVIDER } from "./constants";
 
 /**
  *
@@ -13,7 +13,7 @@ function useProvider(store) {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    dispatch({ type: INIT });
+    dispatch({ type: `${PROVIDER}/${INIT}` });
     setReady(true);
   }, []);
 
