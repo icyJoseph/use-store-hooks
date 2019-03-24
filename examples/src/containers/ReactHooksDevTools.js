@@ -2,10 +2,9 @@ import React, { useReducer } from "react";
 import Counter from "../components/Counter";
 import reducer, { INC, DEC } from "../ducks/counter";
 
+// shows in any environment - no flag for process.env.NODE_ENV
 const useDevTools =
-  process.env.NODE_ENV === "development" &&
-  typeof window !== "undefined" &&
-  window.__REDUX_DEVTOOLS_EXTENSION__;
+  typeof window !== "undefined" && window.__REDUX_DEVTOOLS_EXTENSION__;
 
 const withDevTools = reducer => {
   let extension;
