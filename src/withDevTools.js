@@ -1,22 +1,28 @@
-import { INIT } from "./contants";
+import { INIT, DEVTOOLS } from "./constants";
 
 /**
  *
  * @param {Function} reducer a function which takes state and action to return a next state
  * @param {Object} options options to configure Redux Dev Tools
  * @return {Function} an enhanced reducer, which will send actions and next states to Redux
- * Dev Tools
+ * Dev Tools. By default it connects in development and production NODE_ENVs
  */
-export const withDevTools = (reducer, options) => {
+export const withDevTools = (reducer, options = {}) => {
+  const {
+    envs = ["development", "production"],
+    init = `${DEVTOOLS}/${INIT}`,
+    ...rest
+  } = options;
+
   const useDevTools = () =>
-    process.env.NODE_ENV === "development" &&
+    envs.includes(process.env.NODE_ENV) &&
     typeof window !== "undefined" &&
     window.__REDUX_DEVTOOLS_EXTENSION__;
 
   let extension;
   if (useDevTools()) {
-    extension = window.__REDUX_DEVTOOLS_EXTENSION__.connect({ ...options });
-    extension.send(INIT, reducer(undefined, {}));
+    extension = window.__REDUX_DEVTOOLS_EXTENSION__.connect({ ...rest });
+    extension.send(init, reducer(undefined, {}));
   }
   return (state, action) => {
     const nextState = reducer(state, action);
