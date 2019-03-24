@@ -1,4 +1,5 @@
 import { INIT, DEVTOOLS } from "./constants";
+import { setDevTools } from "./createDevTools";
 
 /**
  *
@@ -14,21 +15,14 @@ export const withDevTools = (reducer, options = {}) => {
     ...rest
   } = options;
 
-  const useDevTools = () =>
-    envs.includes(process.env.NODE_ENV) &&
-    typeof window !== "undefined" &&
-    window.__REDUX_DEVTOOLS_EXTENSION__;
+  const envFlag = envs.includes(process.env.NODE_ENV);
+  const extension = setDevTools(envFlag);
 
-  let extension;
-  if (useDevTools()) {
-    extension = window.__REDUX_DEVTOOLS_EXTENSION__.connect({ ...rest });
-    extension.send(init, reducer(undefined, {}));
-  }
+  const devTools = extension.connect({ ...rest });
+  devTools.send(init, reducer(undefined, {}));
   return (state, action) => {
     const nextState = reducer(state, action);
-    if (useDevTools()) {
-      extension.send(action.type, nextState);
-    }
+    devTools.send(action.type, nextState);
     return nextState;
   };
 };

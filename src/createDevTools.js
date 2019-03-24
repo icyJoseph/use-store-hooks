@@ -8,7 +8,7 @@ const fallback = env => ({
   }
 });
 
-const setDevTools = env => {
+export const setDevTools = env => {
   const maybeExtension =
     env && typeof window !== "undefined" && window.__REDUX_DEVTOOLS_EXTENSION__;
   return maybeExtension || fallback(env);
