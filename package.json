@@ -18,6 +18,7 @@
     "redux-devtools",
     "redux-hooks"
   ],
+  "repository": "github:icyJoseph/use-store-hooks",
   "main": "dist/index.js",
   "scripts": {
     "deploy": "yarn build && surge --domain https://rare-channel.surge.sh --project ./examples/dist",

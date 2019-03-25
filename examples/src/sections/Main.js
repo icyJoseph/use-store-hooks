@@ -15,7 +15,7 @@ export function Main() {
           <Button
             color="primary"
             tag="a"
-            href="https://github.com/icyJoseph/useGlobalStore"
+            href="https://github.com/icyJoseph/use-store-hooks"
             target="_blank"
             rel="noopener noreferrer"
           >
