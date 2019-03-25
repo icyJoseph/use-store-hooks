@@ -5,7 +5,7 @@ export function Main() {
   return (
     <Jumbotron fluid>
       <Container fluid>
-        <h1 className="display-3">Global Store with Hooks</h1>
+        <h1 className="display-3">Use Store with Hooks</h1>
         <p className="lead">
           This library mimics Redux's global store using hooks. It also makes it
           simple to enhancer hooks, in order to apply middleware. For example,

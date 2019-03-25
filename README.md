@@ -1,6 +1,6 @@
-# useStore
+# use-store-hooks
 
-Implementation of React Hooks which allows you to use apply middleware to reducers.
+Create a redux-like store using hooks. Supports middleware.
 
 Demo available [here](https://rare-channel.surge.sh/).
 
