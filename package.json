@@ -1,7 +1,7 @@
 {
-  "name": "use-global-store",
+  "name": "use-store",
   "version": "1.0.0",
-  "description": "React global store using hooks. Supports middleware",
+  "description": "Create a redux-like store using hooks. Supports middleware",
   "author": {
     "name": "Joseph Chamochumbi",
     "email": "contact@icjoseph.com",
@@ -11,7 +11,12 @@
     "react",
     "react-hooks",
     "useEffectLayout",
-    "reactjs"
+    "reactjs",
+    "redux",
+    "redux-store",
+    "middleware",
+    "redux-devtools",
+    "redux-hooks"
   ],
   "main": "dist/index.js",
   "scripts": {
