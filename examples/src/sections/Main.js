@@ -21,7 +21,13 @@ export function Main() {
           >
             GitHub
           </Button>
-          <Button color="info" tag="a">
+          <Button
+            color="info"
+            tag="a"
+            href="https://www.npmjs.com/package/use-store-hooks"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             npm
           </Button>
         </div>
