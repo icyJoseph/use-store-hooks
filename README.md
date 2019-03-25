@@ -1,8 +1,6 @@
-# useGlobalStore
+# useStore
 
 Implementation of React Hooks which allows you to use apply middleware to reducers.
-
-> Coming soon to NPM!
 
 Demo available [here](https://rare-channel.surge.sh/).
 
