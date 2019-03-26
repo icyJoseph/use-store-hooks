@@ -46,7 +46,7 @@ You have two options:
 This library exposes `connect` which behaves almost like `react-redux`'s. The main difference is that the second parameter to connect should always be a function!
 
 ```jsx
-export function GlobalStoreExample({ count, dispatch }) {
+export function WithConnect({ count, dispatch }) {
   return (
     <Counter
       count={count}
@@ -59,14 +59,13 @@ export function GlobalStoreExample({ count, dispatch }) {
 export default connect(store => ({ count: store }))(GlobalStoreExample);
 ```
 
-This is a slightly annoying method, which involves Higher Order Components. Sometimes testing these is cumbersome.
+This is a slightly annoying method, which involves Higher Order Components, sometimes testing these is cumbersome.
 
 > `connect` can take zero, one or two arguments!
-> `connect` passes dispatch down to `GlobalStoreExample`
 
 ### useContext
 
-React 16.1, exposes the `useContext` API.
+React 16.8.1, exposes the `useContext` API, which can be used to replace `connect`.
 
 ```jsx
 import React, { useContext } from "react";
@@ -90,7 +89,7 @@ export default WithoutConnect;
 
 This is a much better approach, as it isolates completely the component from external props. The benefits of using context are already well known.
 
-> Notice how `WithoutConnect` does not need defined arguments!
+> Notice how `WithoutConnect` does not need pre-defined props!
 
 ## Why?
 
@@ -98,9 +97,11 @@ You could've set this up yourself, what is the big gain?
 
 > This library has no additional dependencies other than React 16.1+ being present in your project!
 
-The biggest gain is the possiblity to use middleware. The idea is to enable this anywhere in your application.
+The biggest gain is the possiblity to use middleware. Furthermore, you can to enable this anywhere in your application.
 
-For example, Redux Dev Tools is a good extension to debug your React-Redux applications, but it relies on enhancer, how could you still use it in your application?
+For example, Redux Dev Tools is a good extension to debug your React-Redux applications, but it relies on enhancing Redux. How could you still use it in your application?
+
+### Vanilla Approach
 
 Let's say you have a React component. Notice that this class component has been structured in such a way that it dispatches actions to a reducer, which updates the state. Redux is a way of coding, not just a library!
 
@@ -184,6 +185,8 @@ export default ReactComponentDevTools;
 
 Now your component reports to Redux Dev Tools. However it is now much more verbose!
 
+#### `withDevTools`
+
 Instead, you could just use `withDevTools`, which enhancers your reducer.
 
 ```jsx
@@ -206,6 +209,8 @@ export default ReactHookDevToolsEnhancer;
 ```
 
 And now your the `Counter` state is up in the Redux Dev Tools.
+
+#### `useMiddleware`
 
 You can also make local redux store which connects wraps a section of your application.
 
