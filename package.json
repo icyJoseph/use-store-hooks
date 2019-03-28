@@ -23,6 +23,7 @@
   "scripts": {
     "deploy": "yarn build && surge --domain https://rare-channel.surge.sh --project ./examples/dist",
     "test": "yarn jest ./tests",
+    "test:cov": "yarn jest ./tests --collectCoverage",
     "build": "webpack --mode production",
     "start": "webpack-dev-server --mode development",
     "transpile": "babel src -d dist --copy-files",
