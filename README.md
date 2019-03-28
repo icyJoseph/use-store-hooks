@@ -4,6 +4,17 @@ Create a redux-like store using hooks. Supports middleware.
 
 Demo available [here](https://rare-channel.surge.sh/).
 
+## Test Coverage
+
+Work in progress. No changes have been made to the API up to this point.
+
+```
+ 50% Statements 35/70
+ 29.17% Branches 7/24
+ 32.26% Functions 10/31
+ 51.56% Lines 33/64
+```
+
 ## Motivation
 
 Redux is a very powerful concept. This document aims to share how one could still use the concept without having to ever install `redux` and `react-redux`.
