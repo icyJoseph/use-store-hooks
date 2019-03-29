@@ -8,6 +8,22 @@ Demo available [here](https://rare-channel.surge.sh/).
 
 Work in progress. No changes have been made to the API up to this point.
 
+Update March 29, 2019:
+
+Files left to test:
+
+- `createDevTools.js`
+- `withDevTools.js`
+
+```
+65.71% Statements 46/70
+45.83% Branches 11/24
+67.74% Functions 21/31
+67.19% Lines 43/64
+```
+
+Update March 28, 2019:
+
 ```
  50% Statements 35/70
  29.17% Branches 7/24
