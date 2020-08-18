@@ -1,6 +1,6 @@
 {
   "name": "use-store-hooks",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Create a redux-like store using hooks. Supports middleware",
   "author": {
     "name": "Joseph Chamochumbi",
